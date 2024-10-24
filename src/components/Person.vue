@@ -13,11 +13,15 @@
     <button @click="openLargeScreen">打开大屏</button>
 
   </div>
+  <div>
+    <p>测试shallowRef {{obj.nestedValue}}</p>
+    <button @click="changeObjValue">Change obj value</button>
+    <button @click="changeNestedValue">Change nested value</button>
+  </div>
 </template>
 
 <script setup lang="ts">
-import {reactive, ref} from "vue";
-  import * as readline from "node:readline";
+import {reactive, ref, shallowRef} from "vue";
 import router from "@/router";
   let name=ref("张三丰")
   let age=ref(18)
@@ -41,6 +45,14 @@ import router from "@/router";
     // 在新标签页中打开生成的路由 URL
     window.open(routeUrl.href, '_blank');
   }
+
+const obj = shallowRef({ nestedValue: 'initial nested value' });
+function changeObjValue() {
+  obj.value = { nestedValue: 'new value' };
+}
+function changeNestedValue() {
+  obj.value.nestedValue = 'changed nested value';
+}
 
 </script>
 
