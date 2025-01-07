@@ -1,22 +1,24 @@
 <template>
-  <div class="info1">
-    <p>姓名：{{name}}</p>
-    <p>年龄：{{age}}</p>
-    <div>
-      高手：{{gx.name}},{{gx.wg}}
+  <div style="background: brown">
+    <div class="info1">
+      <p>姓名：{{name}}</p>
+      <p>年龄：{{age}}</p>
+      <div>
+        高手：{{gx.name}},{{gx.wg}}
+      </div>
     </div>
-  </div>
 
-  <div class="info2" >
-    <button @click="updateName">修改姓名</button>
-    <button @click="updateAge">修改年龄</button>
-    <button @click="openLargeScreen">打开大屏</button>
+    <div class="info2" >
+      <button @click="updateName">修改姓名</button>
+      <button @click="updateAge">修改年龄</button>
+      <button @click="openLargeScreen">打开大屏</button>
 
-  </div>
-  <div>
-    <p>测试shallowRef {{obj.nestedValue}}</p>
-    <button @click="changeObjValue">Change obj value</button>
-    <button @click="changeNestedValue">Change nested value</button>
+    </div>
+    <div>
+      <p>测试shallowRef {{obj.nestedValue}}</p>
+      <button @click="changeObjValue">Change obj value</button>
+      <button @click="changeNestedValue">Change nested value</button>
+    </div>
   </div>
 </template>
 
